@@ -1,0 +1,33 @@
+/* sidebar.css */
+.sidebar-container {
+    width: 200px;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .folders-section, 
+  .archived-section,
+  .deleted-section {
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

@@ -1,12 +1,12 @@
 import React from 'react';
-import Sidebar from '../components/sidebar.jsx';
+import FormsSidebar from '../components/forms-sidebar.jsx';
 import Card from '../components/card-form.jsx';
 import './my-forms-page.css';
 
 export default function MyFormsPage() {
   const [forms, setForms] = React.useState([
-    { title: "Mi tutulo 1", respuestas: 1, star: true },
-    { title: "Mi tutulo 2", respuestas: 22, star: false }
+    { id: 1,title: "Mi tutulo 1", respuestas: 1, star: true },
+    { id: 2,title: "Mi tutulo 2", respuestas: 22, star: false }
   ]);
 
   // Usamos useEffect para realizar acciones cuando el componente se monta
@@ -17,7 +17,7 @@ export default function MyFormsPage() {
 
   return (
     <div className="main-container">
-      <Sidebar />
+      <FormsSidebar />
       <div className='main-content'>
         <h1>Formularios</h1>
         <button>Crear Formulario</button>
@@ -27,6 +27,7 @@ export default function MyFormsPage() {
             forms.map((form, index) => (
               <Card 
                 key={index} 
+                id={form.id} 
                 title={form.title} 
                 respuestas={form.respuestas} 
                 star={form.star} 

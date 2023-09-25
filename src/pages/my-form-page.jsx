@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
  import './my-form-page.css'; // Asegúrate de crear este archivo CSS
-import Sidebar from '../components/sidebar';
+import Sidebar from '../components/form-sidebar';
 
 export default function MyFormPage() {
   const [selectedSection, setSelectedSection] = useState(null);
