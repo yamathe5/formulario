@@ -11,14 +11,14 @@ export default function Card({ id, title, respuestas, star }) {
   };
   
   const toggleMenu = (e) => {
-    e.stopPropagation(); // Detiene la propagación del evento click para que no se dispare handleCardClick
+    e.stopPropagation(); // Detiene la propagación del evento click
     setMenuOpen(!menuOpen);
   };
   
   return (
-    <div className="card" onClick={handleCardClick}>
+    <div className="card">
       {star ? <div className="star">⭐</div> : <div className="star">#</div>}
-      <div className="title">{title}</div>
+      <div className="title" onClick={handleCardClick}>{title}</div> {/* Asigna handleCardClick aquí */}
       <div className="bottom">
         <div className="responses">Respuestas: {respuestas}</div>
         <div className="options" onClick={toggleMenu}>⋮
