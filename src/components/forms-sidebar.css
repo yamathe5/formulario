@@ -1,6 +1,6 @@
 /* sidebar.css */
 .sidebar-container {
-    width: 200px;
+    width: 30rem;
     padding: 10px;
     background-color: #f0f0f0;
   }
@@ -10,10 +10,43 @@
   .deleted-section {
     margin-bottom: 20px;
   }
+
+  .sidebar-container h2{
+    font-size: 2rem;
+  margin-bottom: 1.6rem;
+
+  }
+  .folders{
+
+  }
+
+  .folder__item{
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    padding:  2rem 0;
+    border: 1px solid black;
+    margin-bottom: 0.4rem;
+    /* style={{display: "flex", justifyContent: "space-between", padingBottom: "4px", paddingTop:"4px" }} */
+  }
+
+  .folder__item p {
+    font-size: 1.6rem;
+
+  }
   
   ul {
     padding: 0;
     list-style-type: none;
+    font-size: 1.6rem;
+  }
+  .create-folder-input{
+    width: 100%;
+    padding: 1.2rem 0.4rem;
+    outline: none;
+    border-radius: 0.8rem;
+    border: none;
+    margin:  1.2rem 0;
   }
   
   button {

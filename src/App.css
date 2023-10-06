@@ -8,3 +8,44 @@ html {
   font-size: 62.5%;
   font-family: 'DM Sans', sans-serif;
 }
+
+a {
+  font-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+
+
+/* app.css */
+.draggable-item {
+  cursor: grab;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.drop-area {
+  width: 100%;
+  min-height: 200px;
+  border: 2px dashed #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropped-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+/* app.css */
+.drop-area {
+  width: 100%;
+  min-height: 200px;
+  border: 2px dashed #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+

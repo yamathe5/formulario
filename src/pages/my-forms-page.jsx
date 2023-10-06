@@ -3,10 +3,13 @@ import FormsSidebar from '../components/forms-sidebar.jsx';
 import Card from '../components/card-form.jsx';
 import './my-forms-page.css';
 
+
+
 export default function MyFormsPage() {
   const [forms, setForms] = React.useState([
     { id: 1,title: "Mi tutulo 1", respuestas: 1, star: true },
-    { id: 2,title: "Mi tutulo 2", respuestas: 22, star: false }
+    { id: 2,title: "Mi tutulo 2", respuestas: 2, star: true },
+    { id: 3,title: "Mi tutulo 3", respuestas: 3, star: false }
   ]);
 
   // Usamos useEffect para realizar acciones cuando el componente se monta
@@ -21,7 +24,7 @@ export default function MyFormsPage() {
       <div className='main-content'>
         <h1>Formularios</h1>
         <button>Crear Formulario</button>
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div className='card__container'>
           {
             // Mapeamos sobre el estado 'forms' para renderizar cada tarjeta
             forms.map((form, index) => (
