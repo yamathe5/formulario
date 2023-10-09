@@ -6,17 +6,32 @@ import './my-forms-page.css';
 
 
 export default function MyFormsPage() {
-  const [forms, setForms] = React.useState([
-    { id: 1,title: "Mi tutulo 1", respuestas: 1, star: true },
-    { id: 2,title: "Mi tutulo 2", respuestas: 2, star: true },
-    { id: 3,title: "Mi tutulo 3", respuestas: 3, star: false }
+  const [allForms, setAllForms] = React.useState([
+    { id: 1,title: "ZXCA 1", respuestas: 1, star: true },
+    { id: 2,title: "ASDB 2", respuestas: 2, star: true },
+    { id: 3,title: "WQEB 3", respuestas: 3, star: false }
   ]);
 
-  // Usamos useEffect para realizar acciones cuando el componente se monta
-  React.useEffect(() => {
-    // Aquí puedes realizar acciones adicionales si es necesario
-    // Por ejemplo, podrías cargar los datos de los formularios desde una API
-  }, []); // El array vacío indica que este useEffect se ejecutará solo una vez, cuando el componente se monte
+  const [filteredForms, setFilteredForms] = React.useState([...allForms]);
+
+
+  const [value, setValue]  = React.useState('')
+
+  function handleSortByTitle() {
+    const sortedForms = [...filteredForms].sort((a, b) => a.title.localeCompare(b.title));
+    setFilteredForms(sortedForms);
+  }
+
+
+  function functionBuscar (e) {
+    let tempValue = e.target.value
+    setValue(tempValue)
+    let filteredArr = allForms.filter((item) => {
+      return item.title.toLocaleLowerCase().includes(tempValue.toLocaleLowerCase())
+    })
+
+    setFilteredForms(filteredArr)
+  }
 
   return (
     <div className="main-container">
@@ -24,10 +39,14 @@ export default function MyFormsPage() {
       <div className='main-content'>
         <h1>Formularios</h1>
         <button>Crear Formulario</button>
+
+        <input type="text" placeholder='Buscar' onChange={(e) => functionBuscar(e)} value={value}/>
+        <button onClick={handleSortByTitle}>Ordenar por Título (A-Z)</button>
+
         <div className='card__container'>
           {
             // Mapeamos sobre el estado 'forms' para renderizar cada tarjeta
-            forms.map((form, index) => (
+            filteredForms.map((form, index) => (
               <Card 
                 key={index} 
                 id={form.id} 
